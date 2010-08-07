@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.1"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.eclipsercp.hyperbola.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Hyperbola Perspective"
+            class="org.eclipsercp.hyperbola.Perspective"
+            id="org.eclipsercp.hyperbola.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="org.eclipsercp.hyperbola.ContactsView"
+            icon="icons/groups.gif"
+            id="org.eclipsercp.hyperbola.views.contacts"
+            name="Contacts"/>
+   </extension>
+  <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.jivesoftware.smack.Roster"
+            class="org.eclipsercp.hyperbola.AdapterFactory">
+         <adapter type="org.eclipse.ui.model.IWorkbenchAdapter"/>
+      </factory>
+      <factory
+            adaptableType="org.jivesoftware.smack.RosterGroup"
+            class="org.eclipsercp.hyperbola.AdapterFactory">
+         <adapter type="org.eclipse.ui.model.IWorkbenchAdapter"/>
+      </factory>
+       <factory
+            adaptableType="org.jivesoftware.smack.RosterEntry"
+            class="org.eclipsercp.hyperbola.AdapterFactory">
+         <adapter type="org.eclipse.ui.model.IWorkbenchAdapter"/>
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipsercp.hyperbola.ChatEditor"
+            default="false"
+            icon="icons/chat.gif"
+            id="org.eclipsercp.hyperbola.editors.chat"
+            name="Chat"/>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipsercp.hyperbola.application"
+            name="Hyperbola Chat Client">
+         <property
+               name="windowImages"
+               value="icons/alt16.gif,icons/alt32.gif"/>
+         <property
+               name="aboutImage"
+               value="icons/about.gif"/>
+         <property
+               name="aboutText"
+               value="%aboutText"/>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.eclipsercp.hyperbola.GeneralPreferencePage"
+            id="org.eclipsercp.hyperbola.preferences.general"
+            name="General"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.eclipsercp.hyperbola.PreferenceInitializer"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target name="HyperbolaTarget">
+<locations>
+<location includeAllPlatforms="false" includeMode="slicer" type="InstallableUnit">
+<unit id="org.eclipse.rcp.sdk.id" version="3.6.0.I20100608-0911"/>
+<repository location="http://download.eclipse.org/releases/helios"/>
+</location>
+<location includeAllPlatforms="false" includeMode="slicer" type="InstallableUnit">
+<unit id="org.eclipse.equinox.core.sdk.feature.group" version="3.6.0.v20100603-7sF99FsFFUu63a35g6s"/>
+<repository location="http://download.eclipse.org/releases/helios"/>
+</location>
+<location path="${workspace_loc}/HyperbolaTarget/delta.pack/eclipse" type="Directory"/>
+</locations>
+</target>
